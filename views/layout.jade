@@ -1,0 +1,116 @@
+doctype html
+html(lang='en')
+  head
+    script(src='depend/jquery-3.4.1.min.js')
+    script(src='depend/popper.min.js')
+    script(src='depend/bootstrap.min.js')
+    script(src='javascripts/jqcrud.js')
+    link(rel='stylesheet' href='depend/bootstrap.min.css')
+    link(rel='stylesheet' href='stylesheets/jqstyles.css')
+    title Assign3
+  body.container
+    h1 Faculty API Client
+    // Button trigger modal
+    button.btn.btn-primary.btn-lg(type='button' data-toggle='modal' data-target='#addModal')
+      | Add New Record
+    // Modal
+    #addModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='modelTitleId' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h5.modal-title Add Faculty Member
+            button.close(type='button' data-dismiss='modal' aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            .form-group
+              label(for='title') Name
+              input#name.form-control(type='text' name='name' aria-describedby='titleHelp' placeholder='Name of the member')
+              small#titleHelp.form-text.text-muted Enter Name
+            .form-group
+              label(for='body') E-Mail
+              input#email.form-control(type='text' name='email' aria-describedby='bodyHelp' placeholder='E-Mail address of member')
+              small#bodyHelp.form-text.text-muted Enter E-mail Address
+            .form-group
+              label(for='title') Course Code
+              input#course_code.form-control(type='text' name='course_code' aria-describedby='titleHelp' placeholder="Selected Course Code")
+              small#titleHelp.form-text.text-muted Enter Couse Code
+            .form-group
+              label(for='title') Gender
+              input#gender.form-control(type='text' name='gender' aria-describedby='titleHelp' placeholder='Gender of the member')
+              small#titleHelp.form-text.text-muted Enter Gender
+            .form-group
+              label(for='title') Street
+              input#street_address.form-control(type='text' name='street_address' aria-describedby='titleHelp' placeholder='Enter Street Name')
+              small#titleHelp.form-text.text-muted Enter Street Name
+            .form-group
+              label(for='title') City
+              input#city.form-control(type='text' name='city' aria-describedby='titleHelp' placeholder='Enter City Name')
+              small#titleHelp.form-text.text-muted Enter City Name
+            .form-group
+              label(for='title') Country
+              input#country.form-control(type='text' name='country' aria-describedby='titleHelp' placeholder='Enter Country Name')
+              small#titleHelp.form-text.text-muted Enter Country Name
+            .form-group
+              label(for='title') Phone#1
+              input#phone1.form-control(type='text' name='phone1' aria-describedby='titleHelp' placeholder='Phone Number of member')
+              small#titleHelp.form-text.text-muted Enter Phone # 1
+            .form-group
+              label(for='title') Phone#2
+              input#phone2.form-control(type='text' name='phone2' aria-describedby='titleHelp' placeholder='Phone Number of member')
+              small#titleHelp.form-text.text-muted Enter Phone # 2
+          .modal-footer
+            button#addBtn.btn.btn-info Insert Record
+            button.btn.btn-secondary(type='button' data-dismiss='modal')
+              | Close
+    #recipes
+      | Loading ...
+    #updateModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='modelTitleId' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h5.modal-title Update Record
+            button.close(type='button' data-dismiss='modal' aria-label='Close')
+              span(aria-hidden='true') ×
+          .modal-body
+            input#updateId(type='hidden')
+            br
+            .form-group
+              label(for='updateName') Name
+              input#updateName.form-control(type='text' name='name' aria-describedby='updateHelpId' placeholder='')
+              small#updateHelpId.form-text.text-muted Enter Name to Update
+            .form-group
+              label(for='updateEmail') E-Mail
+              input#updateEmail.form-control(type='email' name='email' aria-describedby='updateHelpId' placeholder='')
+              small#updateHelpId.form-text.text-muted Enter E-Mail to Update
+            .form-group
+              label(for='updateCourse_code') Course Code
+              input#updateCourse_code.form-control(type='text' name='updateCourse_code' aria-describedby='updateHelpId' placeholder='')
+              small#updateHelpId.form-text.text-muted Enter ID to Update
+            .form-group
+              label(for='updateGender') Gender
+              input#updateGender.form-control(type='text' name='updateGender' aria-describedby='updateHelpId' placeholder='')
+              small#updateHelpId.form-text.text-muted Enter Gender to Update
+            .form-group
+              label(for='updateStreet') Street
+              input#updateStreet.form-control(type='text' name='updateStreet' aria-describedby='updateHelpId' placeholder='')
+              small#updateHelpId.form-text.text-muted Enter Course Code to Update
+            .form-group
+              label(for='updateCity') City
+              input#updateCity.form-control(type='text' name='updateCity' aria-describedby='updateHelpId' placeholder='')
+              small#updateHelpId.form-text.text-muted Enter Phone# to Update
+            .form-group
+              label(for='updateCountry') Country
+              input#updateCountry.form-control(type='text' name='updateCountry' aria-describedby='updateHelpId' placeholder='')
+              small#updateHelpId.form-text.text-muted Enter Phone# to Update
+            .form-group
+              label(for='updatePhone1') Phone#1
+              input#updatePhone1.form-control(type='text' name='updatePhone1' aria-describedby='updateHelpId' placeholder='')
+              small#updateHelpId.form-text.text-muted Enter Phone# to Update
+            .form-group
+              label(for='updatePhone2') Phone#2
+              input#updatePhone2.form-control(type='text' name='updatePhone2' aria-describedby='updateHelpId' placeholder='')
+              small#updateHelpId.form-text.text-muted Enter Phone# to Update                            
+          .modal-footer
+            button#updateSave.btn.btn-primary Update
+            button.btn.btn-secondary(type='button' data-dismiss='modal')
+              | Close
